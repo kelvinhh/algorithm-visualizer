@@ -17,6 +17,6 @@
 - [ ] ShellSort
 
 ## operations
-- 'Space' to start sorting
-- 'R' to shuffle
+- Space to start sorting
+- R to shuffle
 - Q to quit

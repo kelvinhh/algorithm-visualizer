@@ -9,7 +9,7 @@ void Controller::handleEvent() {
             window.close();
         else if(event.type == sf::Event::KeyPressed)
             if (event.key.code == sf::Keyboard::Space)
-                model.start();
+                model.start(1);
             else if (event.key.code == sf::Keyboard::R)
                 model.shuffle();
             else if (event.key.code == sf::Keyboard::Q)

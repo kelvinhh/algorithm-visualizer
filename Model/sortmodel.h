@@ -13,8 +13,10 @@ public:
         shuffle();
     }
 
+    void sort(int i) override;
     void shuffle() override;
-    void sort() override;
+    
+    void selection_sort();
 };
 
 #endif

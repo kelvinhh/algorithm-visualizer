@@ -1,10 +1,18 @@
 #include "sortmodel.h"
 
+void SortModel::sort(int i) {
+    switch (i) {
+        case 1: selection_sort(); break;
+        default: break;
+    }
+}
+
 void SortModel::shuffle() {
+    if (running) return;
     std::shuffle(data.begin(), data.end(), g);
 }
 
-void SortModel::sort() {
+void SortModel::selection_sort() {
     for (int i = 0; i < size; i++) {
         int idx = i;
         setColor(i, sf::Color::White);

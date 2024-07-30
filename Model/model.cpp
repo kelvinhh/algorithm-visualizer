@@ -16,11 +16,11 @@ sf::Color Model::getColor(int i) const {
     return colors[i];
 }
 
-void Model::start() {
+void Model::start(int i) {
     if (running) return;
     running = true;
     if (modelThread.joinable()) modelThread.join();
-    modelThread = std::thread(&Model::sort, this);
+    modelThread = std::thread(&Model::sort, this, i);
 }
 
 void Model::stop() {
