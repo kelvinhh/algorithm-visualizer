@@ -3,7 +3,6 @@
 
 #include "model.h"
 #include "view.h"
-#include <SFML/Graphics.hpp>
 
 class Controller {
 protected:

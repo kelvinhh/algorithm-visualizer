@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <random>
+#include <thread>
 
 class Model {
 protected:
@@ -14,16 +15,26 @@ protected:
     std::vector<int> data;
     std::vector<sf::Color> colors;
 
+    std::thread modelThread;
+    std::atomic<bool> running{false};
+
 public:
     Model(): g{rd()} {}
-    virtual ~Model() = default;
+    virtual ~Model() { stop(); }
     
     virtual void shuffle() = 0;
     virtual void sort() = 0;
 
+    // setter
+    void setColor(int i, sf::Color color);
+
+    // getter
     int getSize() const;
     int getData(int i) const;
     sf::Color getColor(int i) const;
+
+    void start();
+    void stop();
 };
 
 #endif

@@ -1,7 +1,7 @@
 ## MVC
-- [ ] Sort Model
-- [ ] viewer
-- [ ] controller
+- [x] Sort Model
+- [x] viewer
+- [x] controller
 
 ## Sort Model
 ### sorting algorithm
@@ -15,3 +15,8 @@
 - [ ] Radix Sort
 - [ ] Bucket Sort
 - [ ] ShellSort
+
+## operations
+- 'Space' to start sorting
+- 'R' to shuffle
+- Q to quit

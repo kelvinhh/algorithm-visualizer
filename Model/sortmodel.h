@@ -2,8 +2,6 @@
 #define SORTMODEL_H
 
 #include "model.h"
-#include <SFML/Graphics.hpp>
-#include <vector>
 
 class SortModel: public Model {
 public:
