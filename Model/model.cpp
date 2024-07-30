@@ -24,6 +24,7 @@ void Model::start(int i) {
 }
 
 void Model::stop() {
+    if (!running) return;
     running = false;
     if (modelThread.joinable()) modelThread.detach();
 }

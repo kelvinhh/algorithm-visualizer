@@ -15,8 +15,22 @@ public:
 
     void sort(int i) override;
     void shuffle() override;
+
+    void wait();
     
-    void selection_sort();
+    void selectionSort();
+    void BubbleSort();
+    void InsertionSort();
+    void MergeSort(int l, int r);
+    void merge(int l, int r, int mid);
+    void QuickSort();
+    void quicksort(int l, int r);
+    void HeapSort();
+    void heapify(int n, int i);
+    void CountingSort();
+    void RadixSort();
+    void BucketSort();
+    void ShellSort();
 };
 
 #endif
