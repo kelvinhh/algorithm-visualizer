@@ -6,15 +6,15 @@
 #include "Controller/sortcontroller.h"
 
 int main() {
-    // SortView view;
-    // SortModel model(100);
-    // SortController sortcontroller(view, model);
+    SortView view;
+    SortModel model(100);
+    SortController sortcontroller(view, model);
 
-    // while (view.getWindow().isOpen()) {
-    //     sortcontroller.handleEvent();
+    while (view.getWindow().isOpen()) {
+        sortcontroller.handleEvent();
 
-    //     sortcontroller.viewRender();
-    // }
+        sortcontroller.viewRender();
+    }
 
     return EXIT_SUCCESS;
 }
