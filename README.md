@@ -1,5 +1,5 @@
 ### sorting algorithm
-- [ ] Selection Sort
+- [ X ] Selection Sort
 - [ ] Bubble Sort
 - [ ] Insertion Sort
 - [ ] Merge Sort
