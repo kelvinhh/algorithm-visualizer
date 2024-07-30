@@ -1,6 +1,11 @@
 ### sorting algorithm
-- Selection Sort
-- Bubble Sort
-- Insertion Sort
-- Merge Sort
-[x] Quick Sort
+- [] Selection Sort
+- [] Bubble Sort
+- [] Insertion Sort
+- [] Merge Sort
+- [] Quick Sort
+- [] Heap Sort
+- [] Counting Sort
+- [] Radix Sort
+- [] Bucket Sort
+- [] ShellSort
