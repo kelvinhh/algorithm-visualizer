@@ -1,3 +1,9 @@
+## MVC
+- [ ] Sort Model
+- [ ] viewer
+- [ ] controller
+
+## Sort Model
 ### sorting algorithm
 - [x] Selection Sort
 - [ ] Bubble Sort

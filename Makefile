@@ -7,7 +7,7 @@ CXX = g++
 CXXFLAGS = -std=c++20 -Wall
 
 # Include and Library Directories
-INCLUDES = -I/opt/homebrew/Cellar/sfml/2.6.1/include
+INCLUDES = -I/opt/homebrew/Cellar/sfml/2.6.1/include -I./View -I./Model -I./Controller
 LIBDIRS = -L/opt/homebrew/Cellar/sfml/2.6.1/lib
 
 # SFML Libraries
