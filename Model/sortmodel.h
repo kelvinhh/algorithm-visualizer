@@ -17,6 +17,7 @@ public:
     void shuffle() override;
 
     void wait();
+    void highlight(const std::vector<int>& pos);
     
     void selectionSort();
     void BubbleSort();

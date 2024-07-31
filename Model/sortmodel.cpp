@@ -48,36 +48,34 @@ void SortModel::wait() {
     std::this_thread::sleep_for(std::chrono::milliseconds(5)); 
 }
 
+void SortModel::highlight(const std::vector<int>& pos) {
+    for (int x: pos)
+        setColor(x, sf::Color::White);
+    wait();
+    for (int x: pos)
+        setColor(x, sf::Color::Green);
+}
+
 void SortModel::selectionSort() {
+    std::vector<int> pos;
     for (int i = 0; i < size; i++) {
         int idx = i;
-        setColor(i, sf::Color::White);
         for (int j = i + 1; j < size; j++) {
-            int pre = idx;
-            setColor(j, sf::Color::White);
-            wait();
+            highlight({idx, j});
             if (data[j] < data[idx])
                 idx = j;
-            if (pre != idx && pre != i) setColor(pre, sf::Color::Green);
-            else if (idx != j) setColor(j, sf::Color::Green);
         }
         if (idx != i) std::swap(data[i], data[idx]);
-        setColor(i, sf::Color::Green);
-        setColor(idx, sf::Color::Green);
     }
 }
 
 void SortModel::BubbleSort() {
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size - i - 1; j++) {
-            setColor(j, sf::Color::White);
-            setColor(j + 1, sf::Color::White);
-            wait();
+            highlight({j, j + 1});
             if (data[j] > data[j + 1]) {
                 std::swap(data[j], data[j + 1]);
             }
-            setColor(j, sf::Color::Green);
-            setColor(j + 1, sf::Color::Green);
         }
     }
 }
@@ -86,16 +84,12 @@ void SortModel::InsertionSort() {
     for (int i = 1; i < size; i++) {
         int key = data[i];
         int j = i - 1;
-        setColor(i, sf::Color::White);
         while (j >= 0 && data[j] > key) {
-            setColor(j, sf::Color::White);
-            wait();
+            highlight({j, j + 1});
             data[j + 1] = data[j];
-            setColor(j, sf::Color::Green);
             j--;
         }
         data[j + 1] = key;
-        setColor(i, sf::Color::Green);
     }
 }
 
@@ -111,17 +105,26 @@ void SortModel::merge(int l, int mid, int r) {
     int i = l, j = mid + 1, k = 0;
     std::vector<int> temp(r - l + 1);
     while (i <= mid && j <= r) {
+        highlight({i, j});
         if (data[i] <= data[j]) {
             temp[k++] = data[i++];
         } else {
             temp[k++] = data[j++];
         }
     }
-    while (i <= mid) temp[k++] = data[i++];
-    while (j <= r) temp[k++] = data[j++];
+    while (i <= mid) {
+        highlight({i});
+        temp[k++] = data[i++];
+    }
+    while (j <= r) {
+        highlight({j});
+        temp[k++] = data[j++];
+    }
     for (int i = l; i <= r; i++) {
+        highlight({i});
         data[i] = temp[i - l];
     }
+    wait();
 }
 
 void SortModel::QuickSort() {
@@ -133,11 +136,13 @@ void SortModel::quicksort(int l, int r) {
         int pivot = data[r];
         int i = l - 1;
         for (int j = l; j < r; j++) {
+            highlight({pivot, j});
             if (data[j] < pivot) {
                 i++;
                 std::swap(data[i], data[j]);
             }
         }
+        highlight({i + 1, r});
         std::swap(data[i + 1], data[r]);
         quicksort(l, i);
         quicksort(i + 2, r);
@@ -149,6 +154,7 @@ void SortModel::HeapSort() {
         heapify(size, i);
     }
     for (int i = size - 1; i > 0; i--) {
+        highlight({0, i});
         std::swap(data[0], data[i]);
         heapify(i, 0);
     }
@@ -161,6 +167,7 @@ void SortModel::heapify(int n, int i) {
     if (l < n && data[l] > data[largest]) largest = l;
     if (r < n && data[r] > data[largest]) largest = r;
     if (largest != i) {
+        highlight({i, largest});
         std::swap(data[i], data[largest]);
         heapify(n, largest);
     }
@@ -234,6 +241,7 @@ void SortModel::ShellSort() {
             int temp = data[i];
             int j;
             for (j = i; j >= gap && data[j - gap] > temp; j -= gap) {
+                highlight({j, j - gap});
                 data[j] = data[j - gap];
             }
             data[j] = temp;

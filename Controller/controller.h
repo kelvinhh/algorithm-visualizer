@@ -6,14 +6,18 @@
 
 class Controller {
 protected:
-    View& view;
-    Model& model;
+    View *view;
+    Model *model;
+
+    std::string title;
+
+    int mode = 0;
 
 public:
-    Controller(View& view, Model& model) : view{view}, model{model} {}
+    Controller(View *view, Model *model) : view{view}, model{model} {}
     virtual ~Controller() = default;
     
-    virtual void viewRender() = 0;
+    void viewRender();
 
     void handleEvent();
 };

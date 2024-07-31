@@ -6,15 +6,15 @@
 ## Sort Model
 ### sorting algorithm
 - [x] Selection Sort
-- [ ] Bubble Sort
-- [ ] Insertion Sort
-- [ ] Merge Sort
-- [ ] Quick Sort
-- [ ] Heap Sort
-- [ ] Counting Sort
-- [ ] Radix Sort
-- [ ] Bucket Sort
-- [ ] ShellSort
+- [x] Bubble Sort
+- [x] Insertion Sort
+- [x] Merge Sort
+- [x] Quick Sort
+- [x] Heap Sort
+- [x] Counting Sort (no highlight)
+- [x] Radix Sort (no highlight)
+- [x] Bucket Sort (no highlight)
+- [x] Shell Sort
 
 ## operations
 - Space to start sorting

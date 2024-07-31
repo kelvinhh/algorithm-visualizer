@@ -7,9 +7,7 @@
 
 class SortController: public Controller {
 public:
-    SortController(SortView& view, SortModel& model) : Controller(view, model) {}
-    
-    void viewRender() override;
+    SortController(SortView *view, SortModel *model) : Controller(view, model) {}
 };
 
 

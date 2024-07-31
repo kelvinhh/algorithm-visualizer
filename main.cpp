@@ -1,7 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include <thread>
-#include <atomic>
+#include <memory>
 
 #include "View/sortview.h"
 #include "Model/sortmodel.h"
@@ -16,13 +15,14 @@ void startMenu() {
 int main() {
     startMenu();
     
-    SortView view;
-    SortModel model(100);
-    SortController sortcontroller(view, model);
+    std::unique_ptr<SortView> view = std::make_unique<SortView>()
+    ;
+    std::unique_ptr<SortModel> model = std::make_unique<SortModel>(100);
+    std::unique_ptr<SortController> sortcontroller = std::make_unique<SortController>(view.get(), model.get());
 
-    while (view.getWindow().isOpen()) {
-        sortcontroller.handleEvent();
-        sortcontroller.viewRender();
+    while (view->getWindow().isOpen()) {
+        sortcontroller->handleEvent();
+        sortcontroller->viewRender();
     }
 
     return EXIT_SUCCESS;

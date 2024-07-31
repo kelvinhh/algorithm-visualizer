@@ -7,7 +7,7 @@ class SortView : public View {
 private:
     using View::View;
 
-    void render(const Model& model) override;
+    void render(const Model *model, std::string& title) override;
 };
 
 #endif
