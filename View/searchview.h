@@ -1,10 +1,10 @@
-#ifndef SORTVIEW_H
-#define SORTVIEW_H
+#ifndef SEARCHVIEW_H
+#define SEARCHVIEW_H
 
 #include "view.h"
-#include "sortmodel.h"
+#include "searchmodel.h"
 
-class SortView : public View {
+class SearchView : public View {
 private:
     using View::View;
 

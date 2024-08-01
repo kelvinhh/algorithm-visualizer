@@ -1,0 +1,62 @@
+[
+{
+  "directory": "/Users/khp/Project/algorithm-visualizer/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/opt/homebrew/Cellar/sfml/2.6.1/include -I/Users/khp/Project/algorithm-visualizer/./View -I/Users/khp/Project/algorithm-visualizer/./Model -I/Users/khp/Project/algorithm-visualizer/./Controller  -Wall -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/main.dir/main.cpp.o -c /Users/khp/Project/algorithm-visualizer/main.cpp",
+  "file": "/Users/khp/Project/algorithm-visualizer/main.cpp",
+  "output": "CMakeFiles/main.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/khp/Project/algorithm-visualizer/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/opt/homebrew/Cellar/sfml/2.6.1/include -I/Users/khp/Project/algorithm-visualizer/./View -I/Users/khp/Project/algorithm-visualizer/./Model -I/Users/khp/Project/algorithm-visualizer/./Controller  -Wall -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/main.dir/Controller/controller.cpp.o -c /Users/khp/Project/algorithm-visualizer/Controller/controller.cpp",
+  "file": "/Users/khp/Project/algorithm-visualizer/Controller/controller.cpp",
+  "output": "CMakeFiles/main.dir/Controller/controller.cpp.o"
+},
+{
+  "directory": "/Users/khp/Project/algorithm-visualizer/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/opt/homebrew/Cellar/sfml/2.6.1/include -I/Users/khp/Project/algorithm-visualizer/./View -I/Users/khp/Project/algorithm-visualizer/./Model -I/Users/khp/Project/algorithm-visualizer/./Controller  -Wall -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/main.dir/Model/model.cpp.o -c /Users/khp/Project/algorithm-visualizer/Model/model.cpp",
+  "file": "/Users/khp/Project/algorithm-visualizer/Model/model.cpp",
+  "output": "CMakeFiles/main.dir/Model/model.cpp.o"
+},
+{
+  "directory": "/Users/khp/Project/algorithm-visualizer/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/opt/homebrew/Cellar/sfml/2.6.1/include -I/Users/khp/Project/algorithm-visualizer/./View -I/Users/khp/Project/algorithm-visualizer/./Model -I/Users/khp/Project/algorithm-visualizer/./Controller  -Wall -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/main.dir/View/view.cpp.o -c /Users/khp/Project/algorithm-visualizer/View/view.cpp",
+  "file": "/Users/khp/Project/algorithm-visualizer/View/view.cpp",
+  "output": "CMakeFiles/main.dir/View/view.cpp.o"
+},
+{
+  "directory": "/Users/khp/Project/algorithm-visualizer/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/opt/homebrew/Cellar/sfml/2.6.1/include -I/Users/khp/Project/algorithm-visualizer/./View -I/Users/khp/Project/algorithm-visualizer/./Model -I/Users/khp/Project/algorithm-visualizer/./Controller  -Wall -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/main.dir/Controller/sortcontroller.cpp.o -c /Users/khp/Project/algorithm-visualizer/Controller/sortcontroller.cpp",
+  "file": "/Users/khp/Project/algorithm-visualizer/Controller/sortcontroller.cpp",
+  "output": "CMakeFiles/main.dir/Controller/sortcontroller.cpp.o"
+},
+{
+  "directory": "/Users/khp/Project/algorithm-visualizer/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/opt/homebrew/Cellar/sfml/2.6.1/include -I/Users/khp/Project/algorithm-visualizer/./View -I/Users/khp/Project/algorithm-visualizer/./Model -I/Users/khp/Project/algorithm-visualizer/./Controller  -Wall -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/main.dir/Model/sortmodel.cpp.o -c /Users/khp/Project/algorithm-visualizer/Model/sortmodel.cpp",
+  "file": "/Users/khp/Project/algorithm-visualizer/Model/sortmodel.cpp",
+  "output": "CMakeFiles/main.dir/Model/sortmodel.cpp.o"
+},
+{
+  "directory": "/Users/khp/Project/algorithm-visualizer/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/opt/homebrew/Cellar/sfml/2.6.1/include -I/Users/khp/Project/algorithm-visualizer/./View -I/Users/khp/Project/algorithm-visualizer/./Model -I/Users/khp/Project/algorithm-visualizer/./Controller  -Wall -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/main.dir/View/sortview.cpp.o -c /Users/khp/Project/algorithm-visualizer/View/sortview.cpp",
+  "file": "/Users/khp/Project/algorithm-visualizer/View/sortview.cpp",
+  "output": "CMakeFiles/main.dir/View/sortview.cpp.o"
+},
+{
+  "directory": "/Users/khp/Project/algorithm-visualizer/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/opt/homebrew/Cellar/sfml/2.6.1/include -I/Users/khp/Project/algorithm-visualizer/./View -I/Users/khp/Project/algorithm-visualizer/./Model -I/Users/khp/Project/algorithm-visualizer/./Controller  -Wall -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/main.dir/Controller/searchcontroller.cpp.o -c /Users/khp/Project/algorithm-visualizer/Controller/searchcontroller.cpp",
+  "file": "/Users/khp/Project/algorithm-visualizer/Controller/searchcontroller.cpp",
+  "output": "CMakeFiles/main.dir/Controller/searchcontroller.cpp.o"
+},
+{
+  "directory": "/Users/khp/Project/algorithm-visualizer/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/opt/homebrew/Cellar/sfml/2.6.1/include -I/Users/khp/Project/algorithm-visualizer/./View -I/Users/khp/Project/algorithm-visualizer/./Model -I/Users/khp/Project/algorithm-visualizer/./Controller  -Wall -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/main.dir/Model/searchmodel.cpp.o -c /Users/khp/Project/algorithm-visualizer/Model/searchmodel.cpp",
+  "file": "/Users/khp/Project/algorithm-visualizer/Model/searchmodel.cpp",
+  "output": "CMakeFiles/main.dir/Model/searchmodel.cpp.o"
+},
+{
+  "directory": "/Users/khp/Project/algorithm-visualizer/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/opt/homebrew/Cellar/sfml/2.6.1/include -I/Users/khp/Project/algorithm-visualizer/./View -I/Users/khp/Project/algorithm-visualizer/./Model -I/Users/khp/Project/algorithm-visualizer/./Controller  -Wall -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/main.dir/View/searchview.cpp.o -c /Users/khp/Project/algorithm-visualizer/View/searchview.cpp",
+  "file": "/Users/khp/Project/algorithm-visualizer/View/searchview.cpp",
+  "output": "CMakeFiles/main.dir/View/searchview.cpp.o"
+}
+]

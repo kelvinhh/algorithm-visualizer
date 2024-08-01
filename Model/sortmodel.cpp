@@ -1,5 +1,12 @@
 #include "sortmodel.h"
 
+void SortModel::start(int i) {
+    if (running) return;
+    running = true;
+    if (modelThread.joinable()) modelThread.join();
+    modelThread = std::thread(&SortModel::sort, this, i);
+}
+
 void SortModel::sort(int i) {
     switch (i) {
         case 1:
@@ -247,4 +254,20 @@ void SortModel::ShellSort() {
             data[j] = temp;
         }
     }
+}
+
+void SortModel::setColor(int i, sf::Color color) {
+    colors[i] = color;
+}
+
+int SortModel::getSize() const {
+    return size;
+}
+
+int SortModel::getData(int i) const {
+    return data[i];
+}
+
+sf::Color SortModel::getColor(int i) const {
+    return colors[i];
 }

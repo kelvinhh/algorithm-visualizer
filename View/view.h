@@ -16,7 +16,7 @@ public:
         : width{width}, height{height}, window(mode, title) {}
     virtual ~View() = default;
     
-    virtual void render(const Model *model, std::string& title) = 0;
+    virtual void render(Model *model, std::string& title) = 0;
     
     sf::RenderWindow& getWindow();
 };

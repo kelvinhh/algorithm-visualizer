@@ -19,7 +19,7 @@ public:
     
     void viewRender();
 
-    void handleEvent();
+    virtual void handleEvent() = 0;
 };
 
 #endif

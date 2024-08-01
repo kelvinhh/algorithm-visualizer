@@ -4,6 +4,11 @@
 #include "model.h"
 
 class SortModel: public Model {
+private:
+    int size;
+    std::vector<int> data;
+    std::vector<sf::Color> colors;
+
 public:
     SortModel(int size) {
         this->size = size;
@@ -13,8 +18,9 @@ public:
         shuffle();
     }
 
-    void sort(int i) override;
-    void shuffle() override;
+    void sort(int i);
+    void shuffle();
+    void start(int i) override;
 
     void wait();
     void highlight(const std::vector<int>& pos);
@@ -32,6 +38,14 @@ public:
     void RadixSort();
     void BucketSort();
     void ShellSort();
+
+    // setter
+    void setColor(int i, sf::Color color);
+
+    // getter
+    int getSize() const;
+    int getData(int i) const;
+    sf::Color getColor(int i) const;
 };
 
 #endif

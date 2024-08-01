@@ -8,6 +8,8 @@
 class SortController: public Controller {
 public:
     SortController(SortView *view, SortModel *model) : Controller(view, model) {}
+
+    void handleEvent() override;
 };
 
 
