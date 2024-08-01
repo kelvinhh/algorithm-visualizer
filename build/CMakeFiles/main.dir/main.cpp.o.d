@@ -1050,6 +1050,8 @@ CMakeFiles/main.dir/main.cpp.o: \
   /Users/khp/Project/algorithm-visualizer/./View/sortview.h \
   /Users/khp/Project/algorithm-visualizer/View/searchview.h \
   /Users/khp/Project/algorithm-visualizer/./Model/searchmodel.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/queue \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/deque \
   /Users/khp/Project/algorithm-visualizer/Model/searchmodel.h \
   /Users/khp/Project/algorithm-visualizer/Controller/searchcontroller.h \
   /Users/khp/Project/algorithm-visualizer/./View/searchview.h

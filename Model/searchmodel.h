@@ -3,6 +3,8 @@
 
 #include "model.h"
 #include <ranges>
+#include <queue>
+#include <array>
 
 class SearchModel: public Model {
 private:
@@ -15,8 +17,7 @@ private:
     std::vector<std::vector<wall>> grid;
     std::vector<std::vector<sf::Color>> colors;
     std::vector<std::vector<bool>> vis;
-    std::vector<std::vector<int>> d = {{0, -1}, {-1, 0}, {0, 1}, {1, 0}};
-    std::vector<int> idx = {0, 1, 2, 3};
+    std::vector<std::array<int, 2>> d = {{0, -1}, {-1, 0}, {0, 1}, {1, 0}};
 
 public:
     SearchModel(int M, int N): M{M}, N{N} {
@@ -28,6 +29,7 @@ public:
     void start(int i) override;
 
     void dfs(int x, int y);
+    void prim(int x, int y);
 
     // getter
     std::vector<int> getSize() const;

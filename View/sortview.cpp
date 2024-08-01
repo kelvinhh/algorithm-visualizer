@@ -3,7 +3,6 @@
 void SortView::render(Model *model, std::string& title) {
     SortModel* sortmodel = dynamic_cast<SortModel*>(model);
     int size = sortmodel->getSize();
-
     window.clear();
     sf::Font font;
     if (!font.loadFromFile("../arial/ARIALI.TTF"))

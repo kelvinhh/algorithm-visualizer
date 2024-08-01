@@ -17,7 +17,7 @@ protected:
     std::atomic<bool> running{false};
 
 public:
-    Model(): g{rd()} {}
+    Model(): g{rd()} { srand(time(NULL)); }
     virtual ~Model() { stop(); }
     
     virtual void start(int i) = 0;
