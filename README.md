@@ -1,7 +1,15 @@
 ## MVC
-- [x] Sort Model
-- [x] viewer
+- [x] model
+- [x] view
 - [x] controller
+
+- [x] sort model
+- [x] sort view
+- [x] sort controller
+
+- [ ] search model
+- [ ] search view
+- [ ] search controller
 
 ## Sort Model
 ### sorting algorithm
@@ -16,7 +24,13 @@
 - [x] Bucket Sort (no highlight)
 - [x] Shell Sort
 
+### search algorithm
+#### maze generation
+- [x] dfs
+- [ ] prim
+- [ ] wilson
+
 ## operations
 - Space to start sorting
-- R to shuffle
+- R to reset
 - Q to quit
