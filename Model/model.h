@@ -1,6 +1,7 @@
 #ifndef MODEL_H
 #define MODEL_H
 
+#include "MyColor.h"
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <random>

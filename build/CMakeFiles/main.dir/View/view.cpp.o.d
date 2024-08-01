@@ -2,6 +2,7 @@ CMakeFiles/main.dir/View/view.cpp.o: \
   /Users/khp/Project/algorithm-visualizer/View/view.cpp \
   /Users/khp/Project/algorithm-visualizer/./View/view.h \
   /Users/khp/Project/algorithm-visualizer/./Model/model.h \
+  /Users/khp/Project/algorithm-visualizer/./MyColor.h \
   /opt/homebrew/Cellar/sfml/2.6.1/include/SFML/Graphics.hpp \
   /opt/homebrew/Cellar/sfml/2.6.1/include/SFML/Window.hpp \
   /opt/homebrew/Cellar/sfml/2.6.1/include/SFML/System.hpp \

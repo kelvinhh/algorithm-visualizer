@@ -3,6 +3,7 @@ CMakeFiles/main.dir/Controller/searchcontroller.cpp.o: \
   /Users/khp/Project/algorithm-visualizer/./Controller/searchcontroller.h \
   /Users/khp/Project/algorithm-visualizer/./Controller/controller.h \
   /Users/khp/Project/algorithm-visualizer/./Model/model.h \
+  /Users/khp/Project/algorithm-visualizer/./MyColor.h \
   /opt/homebrew/Cellar/sfml/2.6.1/include/SFML/Graphics.hpp \
   /opt/homebrew/Cellar/sfml/2.6.1/include/SFML/Window.hpp \
   /opt/homebrew/Cellar/sfml/2.6.1/include/SFML/System.hpp \

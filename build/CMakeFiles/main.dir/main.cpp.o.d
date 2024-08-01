@@ -988,9 +988,10 @@ CMakeFiles/main.dir/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__ranges/views.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__ranges/zip_view.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__ranges/istream_view.h \
-  /Users/khp/Project/algorithm-visualizer/View/sortview.h \
+  /Users/khp/Project/algorithm-visualizer/./View/sortview.h \
   /Users/khp/Project/algorithm-visualizer/./View/view.h \
   /Users/khp/Project/algorithm-visualizer/./Model/model.h \
+  /Users/khp/Project/algorithm-visualizer/./MyColor.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/random \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__random/bernoulli_distribution.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__random/uniform_real_distribution.h \
@@ -1044,14 +1045,10 @@ CMakeFiles/main.dir/main.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__thread/thread.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/sstream \
   /Users/khp/Project/algorithm-visualizer/./Model/sortmodel.h \
-  /Users/khp/Project/algorithm-visualizer/Model/sortmodel.h \
-  /Users/khp/Project/algorithm-visualizer/Controller/sortcontroller.h \
+  /Users/khp/Project/algorithm-visualizer/./Controller/sortcontroller.h \
   /Users/khp/Project/algorithm-visualizer/./Controller/controller.h \
-  /Users/khp/Project/algorithm-visualizer/./View/sortview.h \
-  /Users/khp/Project/algorithm-visualizer/View/searchview.h \
+  /Users/khp/Project/algorithm-visualizer/./View/searchview.h \
   /Users/khp/Project/algorithm-visualizer/./Model/searchmodel.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/queue \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/deque \
-  /Users/khp/Project/algorithm-visualizer/Model/searchmodel.h \
-  /Users/khp/Project/algorithm-visualizer/Controller/searchcontroller.h \
-  /Users/khp/Project/algorithm-visualizer/./View/searchview.h
+  /Users/khp/Project/algorithm-visualizer/./Controller/searchcontroller.h

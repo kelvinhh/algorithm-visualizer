@@ -14,7 +14,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 include_directories(/opt/homebrew/Cellar/sfml/2.6.1/include
                     ./View
                     ./Model
-                    ./Controller)
+                    ./Controller
+                    ./)
 
 # Library directories
 link_directories(/opt/homebrew/Cellar/sfml/2.6.1/lib)

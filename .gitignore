@@ -3,3 +3,4 @@ main.dSYM
 .vscode
 *.o
 main
+.cache/clangd/index

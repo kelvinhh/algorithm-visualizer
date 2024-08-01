@@ -18,18 +18,20 @@ private:
     std::vector<std::vector<sf::Color>> colors;
     std::vector<std::vector<bool>> vis;
     std::vector<std::array<int, 2>> d = {{0, -1}, {-1, 0}, {0, 1}, {1, 0}};
+    std::vector<int> idx = {0, 1, 2, 3};
 
 public:
     SearchModel(int M, int N): M{M}, N{N} {
         grid.resize(M, std::vector<wall>(N));
-        colors.resize(M, std::vector<sf::Color>(N, sf::Color::Black));
+        colors.resize(M, std::vector<sf::Color>(N, MyColor::midnight_blue));
         vis.resize(M, std::vector<bool>(N, false));
     }
 
     void start(int i) override;
 
     void dfs(int x, int y);
-    void prim(int x, int y);
+    void prim();
+    void wilson();
 
     // getter
     std::vector<int> getSize() const;

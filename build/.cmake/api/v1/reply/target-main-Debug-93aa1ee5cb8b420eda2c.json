@@ -27,19 +27,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 37,
+				"line" : 38,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 20,
+				"line" : 21,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 40,
+				"line" : 41,
 				"parent" : 0
 			},
 			{
@@ -76,6 +76,10 @@
 				{
 					"backtrace" : 4,
 					"path" : "/Users/khp/Project/algorithm-visualizer/./Controller"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/Users/khp/Project/algorithm-visualizer/."
 				}
 			],
 			"language" : "CXX",

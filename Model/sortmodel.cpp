@@ -57,10 +57,10 @@ void SortModel::wait() {
 
 void SortModel::highlight(const std::vector<int>& pos) {
     for (int x: pos)
-        setColor(x, sf::Color::White);
+        setColor(x, MyColor::azure);
     wait();
     for (int x: pos)
-        setColor(x, sf::Color::Green);
+        setColor(x, MyColor::cornflower_blue);
 }
 
 void SortModel::selectionSort() {
