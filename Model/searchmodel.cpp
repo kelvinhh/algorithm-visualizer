@@ -15,16 +15,25 @@ void SearchModel::start(int i) {
 void SearchModel::work(int i) {
     switch(i) {
         case 1:
-            wilson();
+            dfs_generator(0, 0);
             break;
         case 2:
-            dfs_solver(0, 0);
+            prim();
             break;
         case 3:
-            dijkstra(0, 0);
+            wilson();
             break;
         case 4:
+            dfs_solver(0, 0);
+            break;
+        case 5:
+            dijkstra(0, 0);
+            break;
+        case 6:
             Astar(0, 0);
+            break;
+        case 7:
+            resetAll();
             break;
         default:
             break;
@@ -35,10 +44,10 @@ void SearchModel::work(int i) {
 }
 
 void SearchModel::dfs_generator(int x = -1, int y = -1) {
-    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+    std::this_thread::sleep_for(std::chrono::milliseconds(10));
 
     if (x == -1 && y == -1) x = rand() % M, y = rand() % N;
-    if (check(x, y) || vis[x][y]) return;
+    if (!check(x, y) || vis[x][y]) return;
 
     vis[x][y] = true;
     colors[x][y] = MyColor::cornflower_blue;
@@ -46,7 +55,7 @@ void SearchModel::dfs_generator(int x = -1, int y = -1) {
     std::ranges::shuffle(idx, g);
     for (int i : idx) {
         int nx = x + d[i][0], ny = y + d[i][1];
-        if (check(nx, ny) || vis[nx][ny]) continue;
+        if (!check(nx, ny) || vis[nx][ny]) continue;
 
         int j = (i + 2) % 4;
         grid[x][y].ok[i] = grid[nx][ny].ok[j] = true;
@@ -69,12 +78,12 @@ void SearchModel::prim() {
         auto [x, y] = points[select_idx];
 
         points.erase(points.begin() + select_idx);
-        std::this_thread::sleep_for(std::chrono::milliseconds(50));
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
 
         std::ranges::shuffle(idx, g);
         for (int i : idx) {
             int nx = x + d[i][0], ny = y + d[i][1];
-            if (check(nx, ny) || vis[nx][ny]) continue;
+            if (!check(nx, ny) || vis[nx][ny]) continue;
 
             vis[nx][ny] = true;
             int j = (i + 2) % 4;
@@ -158,7 +167,7 @@ bool SearchModel::dfs_solver(int x, int y) {
 
     vis[x][y] = true;
     colors[x][y] = MyColor::azure;
-    std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    std::this_thread::sleep_for(std::chrono::milliseconds(1));
 
     if (x == M - 1 && y == N - 1) {
         colors[x][y] = sf::Color::Green;
@@ -207,7 +216,7 @@ void SearchModel::dijkstra(int x, int y) {
             }
         }
 
-        colors[x][y] = MyColor::turquoise;
+        colors[x][y] = sf::Color::Red;
     }
     x = M - 1, y = N - 1;
     while (x != pre[{x, y}][0] || y != pre[{x, y}][1]) {
@@ -216,6 +225,8 @@ void SearchModel::dijkstra(int x, int y) {
         x = pre[{tx, ty}][0], y = pre[{tx, ty}][1];
     }
     colors[0][0] = sf::Color::Green;
+
+    std::cout << dist[M - 1][N - 1] << std::endl;
 }
 
 void SearchModel::Astar(int x, int y) {
@@ -263,6 +274,17 @@ void SearchModel::Astar(int x, int y) {
         x = pre[{tx, ty}][0], y = pre[{tx, ty}][1];
     }
     colors[0][0] = sf::Color::Green;
+
+    std::cout << dist[M - 1][N - 1] << std::endl;
+}
+
+void SearchModel::resetAll() {
+    for (auto &row: colors)
+        std::fill(row.begin(), row.end(), MyColor::cornflower_blue);
+    for (int i = 0; i < M; i++)
+        for (int j = 0; j < N; j++)
+            for (int k = 0; k < 4; k++)
+                grid[i][j].ok[k] = false;
 }
 
 std::vector<int> SearchModel::getSize() const {

@@ -6,6 +6,7 @@ void SearchController::handleEvent() {
     SearchModel* searchmodel = dynamic_cast<SearchModel*>(model);
 
     while (window.pollEvent(event)) {
+        std::cout << title << std::endl;
         if (event.type == sf::Event::Closed) 
             window.close();
         else if(event.type == sf::Event::KeyPressed) {
@@ -16,26 +17,31 @@ void SearchController::handleEvent() {
                     break;
                 case sf::Keyboard::Num1:
                     mode = 1;
-                    title = "wilson generation";
+                    title = "dfs generator";
                     break;
                 case sf::Keyboard::Num2:
                     mode = 2;
-                    title = "dfs sovler";
+                    title = "prim";
                     break;
                 case sf::Keyboard::Num3:
                     mode = 3;
+                    title = "wilson";
                     break;
                 case sf::Keyboard::Num4:
                     mode = 4;
+                    title = "dfs solver";
                     break;
                 case sf::Keyboard::Num5:
                     mode = 5;
+                    title = "dijkstra";
                     break;
                 case sf::Keyboard::Num6:
                     mode = 6;
+                    title = "Astar";
                     break;
                 case sf::Keyboard::Num7:
                     mode = 7;
+                    title = "reset";
                     break;
                 case sf::Keyboard::Num8:
                     mode = 8;
@@ -50,7 +56,6 @@ void SearchController::handleEvent() {
                     window.close();
                     break;
                 default:
-                    std::cout << title << std::endl;
                     break;
             }
         }

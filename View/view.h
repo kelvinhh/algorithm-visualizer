@@ -15,9 +15,9 @@ public:
         sf::VideoMode mode = sf::VideoMode(1280, 720))
         : width{width}, height{height}, window(mode, title) {}
     virtual ~View() = default;
-    
+
     virtual void render(Model *model, std::string& title) = 0;
-    
+
     sf::RenderWindow& getWindow();
 };
 

@@ -31,7 +31,9 @@
 - [x] wilson
 
 #### find path
-- [ ] A*
+- [x] dfs
+- [x] dijkstra
+- [x] A*
 
 ## operations
 - Space to start sorting

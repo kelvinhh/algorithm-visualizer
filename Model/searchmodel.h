@@ -43,6 +43,8 @@ public:
     void dijkstra(int x, int y);
     void Astar(int x, int y);
 
+    void resetAll();
+
     // getter
     std::vector<int> getSize() const;
     sf::Color getColor(int x, int y) const;
