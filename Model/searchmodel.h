@@ -41,6 +41,7 @@ public:
     // maze solver
     bool dfs_solver(int x, int y);
     void dijkstra(int x, int y);
+    void Astar(int x, int y);
 
     // getter
     std::vector<int> getSize() const;

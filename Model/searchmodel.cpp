@@ -24,6 +24,7 @@ void SearchModel::work(int i) {
             dijkstra(0, 0);
             break;
         case 4:
+            Astar(0, 0);
             break;
         default:
             break;
@@ -207,6 +208,53 @@ void SearchModel::dijkstra(int x, int y) {
         }
 
         colors[x][y] = MyColor::turquoise;
+    }
+    x = M - 1, y = N - 1;
+    while (x != pre[{x, y}][0] || y != pre[{x, y}][1]) {
+        colors[x][y] = sf::Color::Green;
+        int tx = x, ty = y;
+        x = pre[{tx, ty}][0], y = pre[{tx, ty}][1];
+    }
+    colors[0][0] = sf::Color::Green;
+}
+
+void SearchModel::Astar(int x, int y) {
+    std::map<std::array<int, 2>, std::array<int, 2>> pre;
+    std::vector dist(M, std::vector<int>(N, M * N + 1));
+    std::priority_queue<std::array<int, 4>, std::vector<std::array<int, 4>>, std::greater<>> q;
+
+    q.push({0, 0, x, y});
+    dist[x][y] = 0;
+    pre[{x, y}] = {x, y};
+
+    auto f = [&](int x1, int y1, int x2, int y2) {
+        return (y2 - y1) * (y2 - y1) + (x2 - x1) * (x2 - x1);
+    };
+
+    while (!q.empty()) {
+        auto [fake, real, x, y] = q.top();
+        q.pop();
+
+        vis[x][y] = true;
+        colors[x][y] = MyColor::azure;
+
+        if (x == M - 1 && y == N - 1) break;
+
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+
+        for (int i: idx) {
+            if (grid[x][y].ok[i]) {
+                int nx = x + d[i][0], ny = y + d[i][1];
+
+                if (!vis[nx][ny] && dist[nx][ny] > real + 1) {
+                    dist[nx][ny] = real + 1;
+                    q.push({dist[nx][ny] + f(nx, ny, M - 1, N - 1), dist[nx][ny], nx, ny});
+                    pre[{nx, ny}] = {x, y};
+                }
+            }
+        }
+
+        colors[x][y] = sf::Color::Red;
     }
     x = M - 1, y = N - 1;
     while (x != pre[{x, y}][0] || y != pre[{x, y}][1]) {
