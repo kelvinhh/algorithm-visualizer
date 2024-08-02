@@ -4,6 +4,7 @@ void SearchController::handleEvent() {
     sf::RenderWindow& window = view->getWindow();
     sf::Event event;
     SearchModel* searchmodel = dynamic_cast<SearchModel*>(model);
+    
     while (window.pollEvent(event)) {
         if (event.type == sf::Event::Closed) 
             window.close();

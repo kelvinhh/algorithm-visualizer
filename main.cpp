@@ -18,24 +18,22 @@ void startMenu() {
 
 int main() {
     // startMenu();
-    
     // std::unique_ptr<SortView> view = std::make_unique<SortView>();
     // std::unique_ptr<SortModel> model = std::make_unique<SortModel>(100);
     // std::unique_ptr<SortController> sortcontroller = std::make_unique<SortController>(view.get(), model.get());
-    
     // while (view->getWindow().isOpen()) {
     //     sortcontroller->handleEvent();
     //     sortcontroller->viewRender();
     // }
 
     std::unique_ptr<SearchView> view = std::make_unique<SearchView>();
-    std::unique_ptr<SearchModel> model = std::make_unique<SearchModel>(32, 18);
+    std::unique_ptr<SearchModel> model = std::make_unique<SearchModel>(1280, 720, 10);
     std::unique_ptr<SearchController> sortcontroller = std::make_unique<SearchController>(view.get(), model.get());
 
     while (view->getWindow().isOpen()) {
         sortcontroller->handleEvent();
         sortcontroller->viewRender();
     }
-    
+
     return EXIT_SUCCESS;
 }

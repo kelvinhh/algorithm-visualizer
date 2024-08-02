@@ -11,7 +11,7 @@
 - [ ] search view
 - [ ] search controller
 
-## Sort Model
+## Model
 ### sorting algorithm
 - [x] Selection Sort
 - [x] Bubble Sort
@@ -27,8 +27,11 @@
 ### search algorithm
 #### maze generation
 - [x] dfs
-- [ ] prim
-- [ ] wilson
+- [x] prim
+- [x] wilson
+
+#### find path
+- [ ] A*
 
 ## operations
 - Space to start sorting

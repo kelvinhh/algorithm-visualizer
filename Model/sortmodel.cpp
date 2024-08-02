@@ -41,6 +41,7 @@ void SortModel::sort(int i) {
             break;
         default: break;
     }
+    
     if (std::ranges::is_sorted(data))
         std::cout << "completed" << std::endl;
     running = false;

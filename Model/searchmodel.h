@@ -8,7 +8,7 @@
 
 class SearchModel: public Model {
 private:
-    int M, N;
+    int M, N, grid_size;
 
     struct wall {
         bool ok[4] = {false, false, false, false};
@@ -21,7 +21,9 @@ private:
     std::vector<int> idx = {0, 1, 2, 3};
 
 public:
-    SearchModel(int M, int N): M{M}, N{N} {
+    SearchModel(int width, int height, int grid_size): grid_size{grid_size} {
+        M = width / grid_size;
+        N = height / grid_size;
         grid.resize(M, std::vector<wall>(N));
         colors.resize(M, std::vector<sf::Color>(N, MyColor::midnight_blue));
         vis.resize(M, std::vector<bool>(N, false));
