@@ -6,6 +6,7 @@ void SearchView::render(Model *model, std::string& title) {
     int M = v[0], N = v[1], grid_size = v[2];
 
     window.clear();
+
     for (int x = 0; x < M; x++) {
         for (int y = 0; y < N; y++) {
             sf::RectangleShape rect(sf::Vector2f(grid_size, grid_size));
@@ -18,7 +19,7 @@ void SearchView::render(Model *model, std::string& title) {
     for (int x = 0; x < M; x++) {
         for (int y = 0; y < N; y++) {
             auto grid = searchmodel->getWall(x, y);
-            
+
             for (int k = 0; k < 4; k++) {
                 if (!grid.ok[k]) {
                     sf::RectangleShape line(sf::Vector2f(grid_size, 5));
@@ -41,5 +42,12 @@ void SearchView::render(Model *model, std::string& title) {
             }
         }
     }
+
+    // sf::Font font;
+    // if (!font.loadFromFile("../arial/ARIALI.TTF"))
+    //     return;
+    // sf::Text text(title, font, 50);
+    // window.draw(text);
+    //
     window.display();
 }

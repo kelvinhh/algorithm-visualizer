@@ -29,11 +29,18 @@ public:
         vis.resize(M, std::vector<bool>(N, false));
     }
 
+    bool check(int x, int y);
     void start(int i) override;
+    void work(int i);
 
-    void dfs(int x, int y);
+    // maze generator
+    void dfs_generator(int x, int y);
     void prim();
     void wilson();
+
+    // maze solver
+    bool dfs_solver(int x, int y);
+    void dijkstra(int x, int y);
 
     // getter
     std::vector<int> getSize() const;

@@ -12,36 +12,36 @@ void SortModel::sort(int i) {
         case 1:
             selectionSort();
             break;
-        case 2: 
+        case 2:
             BubbleSort();
             break;
         case 3:
             InsertionSort();
             break;
-        case 4: 
+        case 4:
             MergeSort(0, size - 1);
             break;
-        case 5: 
+        case 5:
             QuickSort();
             break;
         case 6:
             HeapSort();
             break;
-        case 7: 
+        case 7:
             CountingSort();
             break;
-        case 8: 
+        case 8:
             RadixSort();
             break;
-        case 9: 
+        case 9:
             BucketSort();
             break;
-        case 10: 
+        case 10:
             ShellSort();
             break;
         default: break;
     }
-    
+
     if (std::ranges::is_sorted(data))
         std::cout << "completed" << std::endl;
     running = false;
