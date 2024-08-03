@@ -239,7 +239,7 @@ void SearchModel::Astar(int x, int y) {
     pre[{x, y}] = {x, y};
 
     auto f = [&](int x1, int y1, int x2, int y2) {
-        return (y2 - y1) * (y2 - y1) + (x2 - x1) * (x2 - x1);
+        return std::abs(y2 - y1) + std::abs(x2 - x1);
     };
 
     while (!q.empty()) {
