@@ -28,7 +28,7 @@ int main() {
 
     int width = 1440, height = 720;
     std::unique_ptr<SearchView> view = std::make_unique<SearchView>(width, height, "window", sf::VideoMode(width, height));
-    std::unique_ptr<SearchModel> model = std::make_unique<SearchModel>(width, height, 20);
+    std::unique_ptr<SearchModel> model = std::make_unique<SearchModel>(width, height, 40);
     std::unique_ptr<SearchController> sortcontroller = std::make_unique<SearchController>(view.get(), model.get());
 
     while (view->getWindow().isOpen()) {

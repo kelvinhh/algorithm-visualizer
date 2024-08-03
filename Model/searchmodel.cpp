@@ -33,6 +33,9 @@ void SearchModel::work(int i) {
             Astar(0, 0);
             break;
         case 7:
+            resetColor();
+            break;
+        case 8:
             resetAll();
             break;
         default:
@@ -44,13 +47,13 @@ void SearchModel::work(int i) {
 }
 
 void SearchModel::dfs_generator(int x = -1, int y = -1) {
-    std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    std::this_thread::sleep_for(std::chrono::milliseconds(1));
 
     if (x == -1 && y == -1) x = rand() % M, y = rand() % N;
     if (!check(x, y) || vis[x][y]) return;
 
     vis[x][y] = true;
-    colors[x][y] = MyColor::cornflower_blue;
+    colors[x][y] = MyColor::bg;
 
     std::ranges::shuffle(idx, g);
     for (int i : idx) {
@@ -59,7 +62,7 @@ void SearchModel::dfs_generator(int x = -1, int y = -1) {
 
         int j = (i + 2) % 4;
         grid[x][y].ok[i] = grid[nx][ny].ok[j] = true;
-        colors[nx][ny] = MyColor::azure;
+        colors[nx][ny] = MyColor::current;
 
         dfs_generator(nx, ny);
     }
@@ -71,14 +74,14 @@ void SearchModel::prim() {
 
     points.push_back({x, y});
     vis[x][y] = true;
-    colors[x][y] = MyColor::azure;
+    colors[x][y] = MyColor::current;
 
     while (!points.empty()) {
         int select_idx = rand() % points.size();
         auto [x, y] = points[select_idx];
 
         points.erase(points.begin() + select_idx);
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
 
         std::ranges::shuffle(idx, g);
         for (int i : idx) {
@@ -88,11 +91,11 @@ void SearchModel::prim() {
             vis[nx][ny] = true;
             int j = (i + 2) % 4;
             grid[x][y].ok[i] = grid[nx][ny].ok[j] = true;
-            colors[nx][ny] = MyColor::turquoise;
+            colors[nx][ny] = MyColor::path;
 
             points.push_back({nx, ny});
         }
-        colors[x][y] = MyColor::cornflower_blue;
+        colors[x][y] = MyColor::bg;
     }
 }
 
@@ -102,7 +105,7 @@ void SearchModel::wilson() {
     std::vector<std::array<int, 3>> pre;
 
     vis[x][y] = true;
-    colors[x][y] = MyColor::cornflower_blue;
+    colors[x][y] = MyColor::bg;
 
     while (remain) {
         std::vector walked(M, std::vector<bool>(N, false));
@@ -112,8 +115,8 @@ void SearchModel::wilson() {
         while (vis[nx][ny]) nx = rand() % M, ny = rand() % N;
 
         while (walking) {
-            colors[nx][ny] = MyColor::azure;
-            // std::this_thread::sleep_for(std::chrono::milliseconds(1));
+            colors[nx][ny] = MyColor::current;
+            std::this_thread::sleep_for(std::chrono::milliseconds(1));
 
             int nxx, nyy, dir;
             walking = false;
@@ -126,9 +129,9 @@ void SearchModel::wilson() {
                     grid[x][y].ok[i] = grid[x + d[i][0]][y + d[i][1]].ok[j] =
                         true;
                     vis[x][y] = true;
-                    colors[x][y] = MyColor::cornflower_blue;
+                    colors[x][y] = MyColor::bg;
                 }
-                colors[nx][ny] = MyColor::cornflower_blue;
+                colors[nx][ny] = MyColor::bg;
                 pre.clear();
                 break;
             }
@@ -142,13 +145,13 @@ void SearchModel::wilson() {
                     break;
                 }
             }
-            colors[nx][ny] = MyColor::turquoise;
+            colors[nx][ny] = MyColor::path;
             pre.push_back({nx, ny, dir});
 
             if (walked[nxx][nyy]) {
                 while (!pre.empty()) {
                     int px = pre.back()[0], py = pre.back()[1];
-                    colors[px][py] = MyColor::midnight_blue;
+                    colors[px][py] = sf::Color::Black;
                     pre.pop_back();
                     if (px == nxx && py == nyy)
                         break;
@@ -166,22 +169,22 @@ bool SearchModel::dfs_solver(int x, int y) {
         return false;
 
     vis[x][y] = true;
-    colors[x][y] = MyColor::azure;
+    colors[x][y] = MyColor::current;
     std::this_thread::sleep_for(std::chrono::milliseconds(1));
 
     if (x == M - 1 && y == N - 1) {
-        colors[x][y] = sf::Color::Green;
+        colors[x][y] = MyColor::correct;
         return true;
     }
 
     for (int i: idx) {
         if (grid[x][y].ok[i])
             if (dfs_solver(x + d[i][0], y + d[i][1])) {
-                colors[x][y] = sf::Color::Green;
+                colors[x][y] = MyColor::correct;
                 return true;
             }
     }
-    colors[x][y] = sf::Color::Red;
+    colors[x][y] = MyColor::path;
     return false;
 }
 
@@ -199,7 +202,7 @@ void SearchModel::dijkstra(int x, int y) {
         q.pop();
 
         vis[x][y] = true;
-        colors[x][y] = MyColor::azure;
+        colors[x][y] = MyColor::current;
         if (x == M - 1 && y == N - 1) break;
 
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
@@ -216,15 +219,15 @@ void SearchModel::dijkstra(int x, int y) {
             }
         }
 
-        colors[x][y] = sf::Color::Red;
+        colors[x][y] = MyColor::path;
     }
     x = M - 1, y = N - 1;
     while (x != pre[{x, y}][0] || y != pre[{x, y}][1]) {
-        colors[x][y] = sf::Color::Green;
+        colors[x][y] = MyColor::correct;
         int tx = x, ty = y;
         x = pre[{tx, ty}][0], y = pre[{tx, ty}][1];
     }
-    colors[0][0] = sf::Color::Green;
+    colors[0][0] = MyColor::correct;
 
     std::cout << dist[M - 1][N - 1] << std::endl;
 }
@@ -247,7 +250,7 @@ void SearchModel::Astar(int x, int y) {
         q.pop();
 
         vis[x][y] = true;
-        colors[x][y] = MyColor::azure;
+        colors[x][y] = MyColor::current;
 
         if (x == M - 1 && y == N - 1) break;
 
@@ -265,22 +268,27 @@ void SearchModel::Astar(int x, int y) {
             }
         }
 
-        colors[x][y] = sf::Color::Red;
+        colors[x][y] = MyColor::path;
     }
     x = M - 1, y = N - 1;
     while (x != pre[{x, y}][0] || y != pre[{x, y}][1]) {
-        colors[x][y] = sf::Color::Green;
+        colors[x][y] = MyColor::correct;
         int tx = x, ty = y;
         x = pre[{tx, ty}][0], y = pre[{tx, ty}][1];
     }
-    colors[0][0] = sf::Color::Green;
+    colors[0][0] = MyColor::correct;
 
     std::cout << dist[M - 1][N - 1] << std::endl;
 }
 
+void SearchModel::resetColor() {
+    for (auto &row: colors)
+        std::fill(row.begin(), row.end(), MyColor::bg);
+}
+
 void SearchModel::resetAll() {
     for (auto &row: colors)
-        std::fill(row.begin(), row.end(), MyColor::cornflower_blue);
+        std::fill(row.begin(), row.end(), sf::Color::Black);
     for (int i = 0; i < M; i++)
         for (int j = 0; j < N; j++)
             for (int k = 0; k < 4; k++)

@@ -25,7 +25,7 @@ public:
         M = width / grid_size;
         N = height / grid_size;
         grid.resize(M, std::vector<wall>(N));
-        colors.resize(M, std::vector<sf::Color>(N, MyColor::midnight_blue));
+        colors.resize(M, std::vector<sf::Color>(N, sf::Color::Black));
         vis.resize(M, std::vector<bool>(N, false));
     }
 
@@ -43,6 +43,7 @@ public:
     void dijkstra(int x, int y);
     void Astar(int x, int y);
 
+    void resetColor();
     void resetAll();
 
     // getter

@@ -4,10 +4,10 @@
 #include <SFML/Graphics.hpp>
 
 namespace MyColor {
-    const sf::Color midnight_blue = sf::Color(25, 25, 112);
-    const sf::Color cornflower_blue = sf::Color(100, 149, 237);
-    const sf::Color azure = sf::Color(240, 255, 255);
-    const sf::Color turquoise = sf::Color(64, 224, 208);
+   const sf::Color bg = sf::Color(44,69,107);
+   const sf::Color path = sf::Color(71,121,196);
+   const sf::Color correct = sf::Color::Green;
+   const sf::Color current = sf::Color(173, 216, 230);
 }
 
 #endif

@@ -14,7 +14,7 @@ public:
         this->size = size;
         data.resize(size);
         std::iota(data.begin(), data.end(), 1);
-        colors.assign(size, MyColor::cornflower_blue);
+        colors.assign(size, MyColor::bg);
         shuffle();
     }
 
