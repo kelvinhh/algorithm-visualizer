@@ -7,9 +7,9 @@
 - [x] sort view
 - [x] sort controller
 
-- [ ] search model
-- [ ] search view
-- [ ] search controller
+- [x] search model
+- [x] search view
+- [x] search controller
 
 ## Model
 ### sorting algorithm
