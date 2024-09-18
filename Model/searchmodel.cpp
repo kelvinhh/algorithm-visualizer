@@ -10,7 +10,7 @@ void SearchModel::start(int i) {
 
     if (modelThread.joinable()) modelThread.join();
     modelThread = std::thread(&SearchModel::work, this, i);
- }
+}
 
 void SearchModel::work(int i) {
     switch(i) {
