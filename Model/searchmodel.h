@@ -1,13 +1,14 @@
 #ifndef SEARCHMODEL_H
 #define SEARCHMODEL_H
 
-#include "model.h"
-#include <ranges>
-#include <queue>
 #include <array>
+#include <queue>
+#include <ranges>
 
-class SearchModel: public Model {
-private:
+#include "model.h"
+
+class SearchModel : public Model {
+   private:
     int M, N, grid_size;
 
     struct wall {
@@ -20,8 +21,8 @@ private:
     std::vector<std::array<int, 2>> d = {{0, -1}, {-1, 0}, {0, 1}, {1, 0}};
     std::vector<int> idx = {0, 1, 2, 3};
 
-public:
-    SearchModel(int width, int height, int grid_size): grid_size{grid_size} {
+   public:
+    SearchModel(int width, int height, int grid_size) : grid_size{grid_size} {
         M = width / grid_size;
         N = height / grid_size;
         grid.resize(M, std::vector<wall>(N));

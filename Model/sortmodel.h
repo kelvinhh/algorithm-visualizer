@@ -3,13 +3,13 @@
 
 #include "model.h"
 
-class SortModel: public Model {
-private:
+class SortModel : public Model {
+   private:
     int size;
     std::vector<int> data;
     std::vector<sf::Color> colors;
 
-public:
+   public:
     SortModel(int size) {
         this->size = size;
         data.resize(size);
@@ -24,7 +24,7 @@ public:
 
     void wait();
     void highlight(const std::vector<int>& pos);
-    
+
     void selectionSort();
     void BubbleSort();
     void InsertionSort();

@@ -1,26 +1,27 @@
 #ifndef MODEL_H
 #define MODEL_H
 
-#include "MyColor.h"
 #include <SFML/Graphics.hpp>
-#include <vector>
+#include <iostream>
+#include <mutex>
 #include <random>
 #include <thread>
-#include <mutex>
-#include <iostream>
+#include <vector>
+
+#include "MyColor.h"
 
 class Model {
-protected:
+   protected:
     std::random_device rd;
     std::mt19937 g;
 
     std::thread modelThread;
     std::atomic<bool> running{false};
 
-public:
-    Model(): g{rd()} { srand(time(NULL)); }
+   public:
+    Model() : g{rd()} { srand(time(NULL)); }
     virtual ~Model() { stop(); }
-    
+
     virtual void start(int i) = 0;
     void stop();
 };

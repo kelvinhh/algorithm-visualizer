@@ -7,13 +7,12 @@ void SearchController::handleEvent() {
 
     while (window.pollEvent(event)) {
         std::cout << title << std::endl;
-        if (event.type == sf::Event::Closed) 
+        if (event.type == sf::Event::Closed)
             window.close();
-        else if(event.type == sf::Event::KeyPressed) {
-            switch(event.key.code) {
+        else if (event.type == sf::Event::KeyPressed) {
+            switch (event.key.code) {
                 case sf::Keyboard::Space:
-                    if (mode)
-                        searchmodel->start(mode);
+                    if (mode) searchmodel->start(mode);
                     break;
                 case sf::Keyboard::Num1:
                     mode = 1;
@@ -49,7 +48,7 @@ void SearchController::handleEvent() {
                 case sf::Keyboard::Num9:
                     mode = 9;
                     break;
-                 case sf::Keyboard::Num0:
+                case sf::Keyboard::Num0:
                     mode = 9;
                     break;
                 case sf::Keyboard::Q:

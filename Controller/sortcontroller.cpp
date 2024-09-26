@@ -7,14 +7,14 @@ void SortController::handleEvent() {
     SortModel* sortmodel = dynamic_cast<SortModel*>(model);
 
     while (window.pollEvent(event)) {
-        if (event.type == sf::Event::Closed) 
+        if (event.type == sf::Event::Closed)
             window.close();
-        else if(event.type == sf::Event::KeyPressed) {
-            switch(event.key.code) {
+        else if (event.type == sf::Event::KeyPressed) {
+            switch (event.key.code) {
                 case sf::Keyboard::Space:
-                    if (mode)
-                        sortmodel->start(mode);
-                    std::cout << "Haven't choose any sorting algorithm" << std::endl;
+                    if (mode) sortmodel->start(mode);
+                    std::cout << "Haven't choose any sorting algorithm"
+                              << std::endl;
                     break;
                 case sf::Keyboard::Num1:
                     mode = 1;
@@ -62,7 +62,8 @@ void SortController::handleEvent() {
                 case sf::Keyboard::Q:
                     window.close();
                     break;
-                default: break;
+                default:
+                    break;
             }
         }
     }

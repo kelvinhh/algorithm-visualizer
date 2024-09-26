@@ -1,6 +1,6 @@
 #include "searchview.h"
 
-void SearchView::render(Model *model, std::string& title) {
+void SearchView::render(Model* model, std::string& title) {
     SearchModel* searchmodel = dynamic_cast<SearchModel*>(model);
     auto v = searchmodel->getSize();
     int M = v[0], N = v[1], grid_size = v[2];
